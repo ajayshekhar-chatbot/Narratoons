@@ -1,0 +1,240 @@
+/* ============================================================
+   Narratoons — Stylesheet
+   ============================================================ */
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: sans-serif;
+}
+html, body {
+  height: 100%; overflow-x: hidden; overflow-y: auto;
+}
+body {
+  background: url("Images/21633.jpg") center center / cover fixed;
+}
+li { list-style: none; }
+a  { text-decoration: none; color: #fff; font-size: 1rem; }
+a:hover { color: aquamarine; }
+
+/* ── Buttons ── */
+button {
+  border: none;
+  background: rgba(255,255,255,0.2);
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: bold; font-size: 15px;
+  transition: transform 0.2s ease;
+}
+button:hover { transform: scale(1.03); cursor: pointer; }
+
+/* ── Navbar ── */
+header {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  padding: 0 2rem;
+  background: rgba(0,0,0,0.35);
+}
+.navbar {
+  height: 60px; max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.navbar .logo a { font-size: 1.5rem; font-weight: bold; }
+.navbar .links  { display: flex; gap: 2rem; }
+.navbar .toggle_btn { color:#fff; font-size:1.5rem; cursor:pointer; display:none; }
+.action_btn { color: aliceblue; padding: 0.5rem 1rem; }
+
+/* ── Homepage Cards ── */
+.card-container {
+  display: flex; justify-content: center; flex-wrap: wrap;
+  gap: 25px; margin-top: 100px; padding-top: 70px;
+}
+.card {
+  width: 325px; background: rgba(0,0,0,0.4);
+  border-radius: 30px; box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+  cursor: pointer; transition: transform 0.3s ease;
+}
+.card:hover { transform: scale(1.05); }
+.card-content { padding: 30px; line-height: 1.4; }
+.card-content h2 { font-size: 32px; margin-bottom:10px; color: aquamarine; }
+.card-content p  { font-size: 16px; color: white; }
+
+/* ── Page Sections ── */
+.page-section {
+  padding: 50px 20px; margin-top: 50vh;
+  background: rgba(0,0,0,0.45); color: white;
+}
+.section-content { max-width: 800px; margin: 0 auto; }
+.section-content h4 { font-size: 32px; margin-bottom: 16px; color: aquamarine; }
+.highlight-name { font-size: 1.2em; font-weight: bold; }
+
+/* ── Craft Page Layout ── */
+.main-container {
+  display: flex; width: 100vw; min-height: 100vh;
+  margin-top: 80px; box-sizing: border-box;
+}
+.sections-container {
+  display: flex; width: 100%; gap: 0;
+}
+
+/* Left panel (controls) */
+.left-panel {
+  flex: 0 0 320px; max-width: 360px;
+  margin: 32px 0 32px 32px;
+  background: rgba(20,20,30,0.6);
+  border-radius: 16px;
+  padding: 28px 20px;
+  display: flex; flex-direction: column;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+
+/* Right panel (output) */
+.right-panel {
+  flex: 1 1 0%;
+  margin: 32px 32px 32px 24px;
+  background: rgba(20,20,30,0.4);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex; flex-direction: column; align-items: center;
+  min-width: 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+
+.output-section {
+  width: 100%; display: flex; flex-direction: column; align-items: center;
+}
+.output-title {
+  color: #fff; font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 12px;
+}
+.output-picture-style {
+  color: rgba(255,255,255,0.75); font-size: 1rem; margin-bottom: 12px;
+}
+
+/* ── Search Input ── */
+.search_container {
+  width: 100%; margin-bottom: 16px;
+  display: flex; justify-content: center;
+}
+.search_container input {
+  width: 100%; padding: 10px 16px;
+  border-radius: 25px; border: none;
+  background: aliceblue; color: #222; font-size: 14px;
+  transition: box-shadow 0.3s;
+}
+.search_container input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(80,180,255,0.45);
+}
+.search_container input::placeholder { color: rgba(34,34,34,0.45); }
+
+/* Generate button */
+.option-item {
+  width: 100%; color: white; padding: 12px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 8px; margin-bottom: 20px;
+  font-size: 1rem; cursor: pointer;
+  transition: background 0.25s;
+}
+.option-item:hover { background: rgba(255,255,255,0.25); }
+.options-section { display: flex; flex-direction: column; gap: 0; }
+
+/* ── Dropdowns ── */
+.grid-type-dropdown, .picture-style-dropdown {
+  position: relative; width: 100%; margin-bottom: 14px;
+}
+.dropdown-selected {
+  display: flex; align-items: center; justify-content: space-between;
+  background: #222; color: #fff;
+  padding: 11px 14px; border-radius: 8px;
+  cursor: pointer; font-size: 15px;
+  transition: background 0.2s;
+}
+.dropdown-selected:hover { background: #333; }
+.selected-content { display: flex; align-items: center; gap: 10px; }
+#selected-grid-icon { display: flex; align-items: center; }
+.dropdown-arrow { font-size: 13px; }
+
+.dropdown-list {
+  position: absolute; top: 100%; left: 0; width: 100%;
+  background: #fff; color: #222;
+  border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+  z-index: 50; margin-top: 6px; overflow: hidden;
+}
+.dropdown-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 11px 14px; cursor: pointer; transition: background 0.15s;
+}
+.item-content { display: flex; align-items: center; gap: 10px; }
+.grid-icon    { display: flex; align-items: center; }
+
+.dropdown-item.selected {
+  background: rgba(80,180,255,0.15);
+  font-weight: bold; color: #1a6fa4;
+  border-left: 4px solid #50b4ff;
+}
+.dropdown-item .checkmark { color: #50b4ff; font-weight: bold; margin-left: 8px; }
+.dropdown-item:hover { background: rgba(80,180,255,0.08); color: #1a6fa4; }
+
+/* ── Output Grid ── */
+.output-images {
+  width: 100%; min-height: 500px; max-height: 72vh;
+  background: rgba(255,255,255,0.07);
+  border-radius: 12px; padding: 20px;
+  display: grid; gap: 16px;
+  box-sizing: border-box; margin-top: 12px; overflow: auto;
+}
+
+/* TYPE-1: equal 2×2 (4 panels) */
+.output-images.grid-0 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.output-images.grid-0 .panel-1 { grid-column:1; grid-row:1; }
+.output-images.grid-0 .panel-2 { grid-column:2; grid-row:1; }
+.output-images.grid-0 .panel-3 { grid-column:1; grid-row:2; }
+.output-images.grid-0 .panel-4 { grid-column:2; grid-row:2; }
+
+/* TYPE-2: one wide top + 2 bottom (3 panels) */
+.output-images.grid-1 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.output-images.grid-1 .panel-1 { grid-column:1 / span 2; grid-row:1; }
+.output-images.grid-1 .panel-2 { grid-column:1; grid-row:2; }
+.output-images.grid-1 .panel-3 { grid-column:2; grid-row:2; }
+
+/* TYPE-3: tall left + 2 stacked right (3 panels) */
+.output-images.grid-2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.output-images.grid-2 .panel-1 { grid-column:1; grid-row:1 / span 2; }
+.output-images.grid-2 .panel-2 { grid-column:2; grid-row:1; }
+.output-images.grid-2 .panel-3 { grid-column:2; grid-row:2; }
+
+/* ── Comic Panels ── */
+.comic-panel {
+  background: #fafafa; border: 2px solid #ccc; border-radius: 6px;
+  width: 100%; height: 100%; min-height: 120px;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.comic-panel.empty-outline { border: 2px dashed #888; background: rgba(255,255,255,0.04); }
+.panel-placeholder-text { color: rgba(160,160,160,0.8); font-size: 0.85rem; font-style: italic; }
+.comic-panel img { width:100%; height:100%; object-fit:cover; border-radius:4px; display:block; }
+
+/* ── Loading Spinner ── */
+.loading-state {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; width: 100%; min-height: 300px;
+  color: #fff; text-align: center; gap: 18px;
+}
+.loading-state p  { font-size: 1.15rem; line-height: 1.6; }
+.loading-state small { opacity: 0.6; font-size: 0.85rem; }
+
+.spinner {
+  width: 52px; height: 52px;
+  border: 5px solid rgba(255,255,255,0.15);
+  border-top-color: aquamarine;
+  border-radius: 50%;
+  animation: spin 0.85s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .sections-container { flex-direction: column; }
+  .left-panel  { flex: none; max-width: 100%; margin: 76px 12px 0; }
+  .right-panel { margin: 12px 12px 32px; }
+  .navbar .links { display: none; }
+  .navbar .toggle_btn { display: block; }
+}

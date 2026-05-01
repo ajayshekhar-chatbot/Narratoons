@@ -16,8 +16,8 @@
 // ── State ────────────────────────────────────────────────────
 let selectedGridType    = 0;
 let selectedPictureType = 0;
-const styleLabels       = ['Japanese', 'American', 'Egyptian'];
-const BACKEND_URL       = 'http://127.0.0.1:8000/generate-comic';
+const styleLabels       = ['Japanese', 'American', 'Egyptian','Indian'];
+const BACKEND_URL = 'https://narratoons.onrender.com/generate-comic';
 
 // Voice recognition state
 let recognition  = null;   // SpeechRecognition instance

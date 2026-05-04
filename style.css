@@ -11,7 +11,7 @@ html, body {
   height: 100%; overflow-x: hidden; overflow-y: auto;
 }
 body {
-  background: url("Images\21633.jpeg") center center / cover fixed;
+  background: url("Images\21633.jpg") center center / cover fixed;
 }
 li { list-style: none; }
 a  { text-decoration: none; color: #fff; font-size: 1rem; }
